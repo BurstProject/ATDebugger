@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atdebugger.controller.BlockWindowController">
+   <children>
+      <VBox prefHeight="29.0" prefWidth="275.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox spacing="5.0">
+               <children>
+                  <Button fx:id="addAT" mnemonicParsing="false" onAction="#addAT" text="Add AT" />
+                  <Button fx:id="advanceBlock" mnemonicParsing="false" onAction="#advanceBlock" text="Advance Block" />
+                  <Button fx:id="undoBlock" mnemonicParsing="false" onAction="#undoBlock" text="Undo Block" />
+                  <Label fx:id="blockLabel" text="Block: 1" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

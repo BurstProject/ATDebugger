@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="132.0" prefWidth="186.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atdebugger.controller.TransactionWindowController">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="103.0" prefWidth="186.0">
+         <children>
+            <VBox prefHeight="211.0" prefWidth="60.0" spacing="10.0">
+               <children>
+                  <Label text="Sender:" />
+                  <Label text="Recipient: " />
+                  <Label text="Amount: " />
+                  <Label text="Message: " />
+               </children>
+            </VBox>
+            <VBox prefHeight="211.0" prefWidth="123.0">
+               <children>
+                  <TextField fx:id="txSender" />
+                  <TextField fx:id="txRecipient" />
+                  <TextField fx:id="txAmount" />
+                  <TextField fx:id="txMessage" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#sendTx" text="Send" />
+   </children>
+</VBox>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atdebugger.controller.ATWindowController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <Button fx:id="runAT" mnemonicParsing="false" onAction="#runAT" text="Run" />
+            <Button fx:id="stepInto" mnemonicParsing="false" onAction="#stepInto" text="Step Into" />
+            <Button fx:id="stepOver" mnemonicParsing="false" onAction="#stepOver" text="Step Over" />
+            <Label text="Balance: " />
+            <TextField fx:id="atBalance" onAction="#setBalance" prefHeight="25.0" prefWidth="82.0" />
+            <Button fx:id="sendTx" mnemonicParsing="false" onAction="#sendTx" text="Send Tx" />
+        </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.7486033519553073" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.5769230769230769" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="atCode" editable="true" onDragDropped="#dragDropped" onDragOver="#dragOver" prefHeight="348.0" prefWidth="342.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="bp" editable="false" prefWidth="27.0" sortable="false" text="BP" />
+                                  <TableColumn fx:id="ip" editable="false" prefWidth="28.0" sortable="false" text="IP" />
+                                    <TableColumn fx:id="codeLocation" editable="false" prefWidth="75.0" sortable="false" text="Loc" />
+                                    <TableColumn fx:id="codeCommand" prefWidth="192.0" sortable="false" text="Command" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="atVars" editable="true" prefHeight="348.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="varLocation" editable="false" prefWidth="75.0" text="Loc" />
+                                  <TableColumn fx:id="varName" prefWidth="75.0" text="Name" />
+                                    <TableColumn fx:id="varValue" prefWidth="99.0" sortable="false" text="Value" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TableView fx:id="atTxs" prefHeight="87.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="txHeight" editable="false" prefWidth="75.0" text="Height" />
+                      <TableColumn fx:id="txId" editable="false" prefWidth="72.0" text="ID" />
+                        <TableColumn fx:id="txSender" editable="false" prefWidth="113.0" text="Sender" />
+                        <TableColumn fx:id="txRecipient" editable="false" prefWidth="122.0" text="Recipient" />
+                        <TableColumn fx:id="txAmount" editable="false" prefWidth="96.0" text="Amount" />
+                        <TableColumn fx:id="txMessage" prefWidth="121.0" text="Message" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
